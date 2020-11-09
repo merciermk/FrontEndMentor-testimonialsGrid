@@ -1,10 +1,10 @@
 * {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  background-color: hsl(0, 0%, 81%);
+  background-color: hsl(210, 46%, 95%);
   font-size: 14px;
   font-family: "Barlow Semi Condensed", sans-serif;
   color: white;
@@ -12,11 +12,11 @@ body {
 
 /* grid layout */
 .grid {
-  background-color: violet;
   width: 80%;
   max-width: 1150px;
-
+  min-width: 300px;
   height: auto;
+  max-height: 2000px;
   margin: 50px auto;
   display: grid;
   column-gap: 20px;
@@ -27,6 +27,8 @@ body {
     "a a b c"
     "d e e c";
 }
+
+/* Case config */
 
 .caseOne {
   grid-area: a;
@@ -54,6 +56,15 @@ body {
 .caseFive {
   grid-area: e;
   background-color: hsl(219, 29%, 14%);
+}
+
+.caseOne,
+.caseTwo,
+.caseThree,
+.caseFour,
+.caseFive {
+  border-radius: 10px;
+  box-shadow: 9px 9px 29px -9px rgba(0, 0, 0, 0.15);
 }
 
 /* general inside containers CSS */
@@ -93,12 +104,12 @@ body {
 }
 
 .title {
-  margin-top: 25px;
+  margin-top: 15px;
   font-size: 1.2rem;
 }
 
 .text {
-  margin-top: 25px;
+  margin-top: 15px;
   opacity: 70%;
 }
 
@@ -123,7 +134,7 @@ body {
 
 @media only screen and (max-width: 900px) {
   .grid {
-    grid-template: repeat(8, 1fr) / repeat(1, minmax(200px, 1fr));
+    grid-template: repeat(8, 1fr) / repeat(1, minmax(auto, 1fr));
     grid-template-areas:
       "a"
       "a"
@@ -138,7 +149,7 @@ body {
 
 @media only screen and (min-device-width: 310px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
   .grid {
-    grid-template: repeat(8, 1fr) / repeat(1, minmax(250px, 1fr));
+    grid-template: repeat(8, 1fr) / repeat(1, minmax(auto, 1fr));
     grid-template-areas:
       "a"
       "a"
